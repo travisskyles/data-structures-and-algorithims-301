@@ -154,7 +154,15 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
- 
+  let sortedByDay = sortMeetingsByDay(arr);
+  return sortedByDay.sort((a, b) => {
+    if(a.dayOfWeek === b.dayOfWeek){
+      if(a.start === b.start){
+        return a.end - b.end;
+      }
+      return a.start - b.start;
+    }
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
