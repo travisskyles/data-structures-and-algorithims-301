@@ -28,7 +28,9 @@ Return an array containing all the matches.
 const isCapitalized = (str) => {
   let reg = /[A-Z]\w+/g;
   let strMatch = str.match(reg);
-  
+  if(strMatch === null){
+    return [];
+  }
   return strMatch;
 };
 
@@ -39,7 +41,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
