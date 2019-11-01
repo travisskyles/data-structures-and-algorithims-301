@@ -61,7 +61,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  const regex = /\b([oO]ct)(ober)?\b/g;
+  return regex.test(input)? true: false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,7 +76,7 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
