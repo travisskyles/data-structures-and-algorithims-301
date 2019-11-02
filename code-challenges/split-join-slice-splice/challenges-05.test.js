@@ -103,7 +103,16 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  for(let i = 0; i < recipe.ingredients.length; i++){
+    let splitStr = recipe.ingredients[i].split(' ');
+    if(splitStr.length === 5){
+      result.push(`${splitStr[2]} ${splitStr[3]} ${splitStr[4]}`);
+    }else if(splitStr.length === 4){
+      result.push(`${splitStr[2]} ${splitStr[3]}`);
+    } else {
+      result.push(splitStr[2]);
+    }
+  }
   return result;
 };
 
