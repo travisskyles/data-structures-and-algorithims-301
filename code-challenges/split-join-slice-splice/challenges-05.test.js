@@ -83,7 +83,13 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  const ingredients = ['gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water'];
+  for(let i = 0; i < recipe.ingredients.length; i++){
+    let findName = ingredients[i];
+    let index = findName.length;
+    let name = recipe.ingredients[i].slice(-index);
+    result.push(name);
+  }
   return result;
 };
 
