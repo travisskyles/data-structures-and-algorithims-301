@@ -182,7 +182,10 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 
 const totalSumCSV = (str) => {
   let total = 0;
-  // Solution code here...
+  let values = str.split(',');
+  for(let i = 0; i < values.length; i++){
+    total = total + parseInt(values[i]);
+  }
   return total;
 };
 
