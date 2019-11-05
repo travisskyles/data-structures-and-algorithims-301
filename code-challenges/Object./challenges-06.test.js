@@ -86,9 +86,8 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 
 const hasChildrenValues = (arr, character) => {
-  let houses = Object.values(arr);
-  for(let i = 0; i < houses.length; i++){
-    if(houses[i].name === character && houses[i].children.length > 0){
+  for(let i = 0; i < arr.length; i++){
+    if(Object.values(arr)[i].name === character && Object.values(arr)[i].children.length > 0){
       return true;
     }
   }
@@ -104,9 +103,8 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  let houses = Object.values(arr);
-  for(let i = 0; i < houses.length; i++){
-    if(houses[i].name === character && Object.entries(houses[i].children).length > 0){
+  for(let i = 0; i < arr.length; i++){
+    if(Object.entries(arr)[i][1].name === character && Object.entries(arr)[i][1].children.length > 0){
       return true;
     }
   }
@@ -120,17 +118,14 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  const chars = [];
-  arr.forEach(item => {
-    chars.push(item.name);
-    if(item.spouse !== null){
-      chars.push(item.spouse);
-    }
-    if(item.children.length > 0){
-      item.children.forEach(item => chars.push(item));
-    }
+  let count = 0;
+
+  arr.forEach(character => {
+    count++;
+    if(character.spouse) count++;
+    count += character.children.length;
   })
-  return chars.length;
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,7 +140,17 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-  // Solution code here...
+
+  arr.forEach(item => {
+    let numMem = 1;
+    if(item.spouse) numMem++;
+    numMem += item.children.length;
+    sizes.push({
+      house: item.house,
+      members: numMem
+    })
+  })
+
   return sizes;
 };
 
@@ -169,7 +174,17 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
+  arr.forEach(char => {
+    let numMem = 1;
+    if(char.spouse) numMem++;
+    console.log(Object.entries(deceasedSpouses))
+    deceasedSpouses.forEach(charSpouse => char.spouse === charSpouse? numMem--: false);
+    numMem += char.children.length;
+    survivors.push({
+      house: char.house,
+      members: numMem
+    })
+  })
   return survivors;
 };
 
