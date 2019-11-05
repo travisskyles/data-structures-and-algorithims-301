@@ -87,9 +87,7 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   let houses = Object.values(arr);
-  console.log(houses);
   for(let i = 0; i < houses.length; i++){
-    console.log(houses[i].name, houses[i].children.length);
     if(houses[i].name === character && houses[i].children.length > 0){
       return true;
     }
@@ -106,7 +104,13 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  let houses = Object.values(arr);
+  for(let i = 0; i < houses.length; i++){
+    if(houses[i].name === character && Object.entries(houses[i].children).length > 0){
+      return true;
+    }
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
