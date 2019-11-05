@@ -84,9 +84,17 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) => {
-  // Solution code here...
 
+const hasChildrenValues = (arr, character) => {
+  let houses = Object.values(arr);
+  console.log(houses);
+  for(let i = 0; i < houses.length; i++){
+    console.log(houses[i].name, houses[i].children.length);
+    if(houses[i].name === character && houses[i].children.length > 0){
+      return true;
+    }
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
