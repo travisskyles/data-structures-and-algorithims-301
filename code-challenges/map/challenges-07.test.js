@@ -65,11 +65,8 @@ If any element in the array is not a number, the resulting array should have the
 For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
-const evenOdd = (arr) => {
-  arr.map(item => {
-    typeof(item === 'string' ? 'N/A' : item % 2 === 0 ? 'even' : 'odd');
-  });
-};
+const evenOdd = arr => arr.map(x => typeof(x) === 'string' ? 'N/A' : x % 2 === 0 ? 'even' : 'odd');
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -113,7 +110,7 @@ const snorlaxAbilities = {
   weight: 4600,
 };
 
-const extractAbilities = arr => arr.map(item => item.abilities.name);
+const extractAbilities = arr => arr.map(data => data.ability.name);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -158,8 +155,10 @@ const snorlaxStats = {
   weight: 4600,
 };
 
-const extractStats = (arr) => {
-  // Solution code here...
+const extractStats = arr => {
+  return arr.map(index => {
+    return {name: index.stat.name, total: index.effort + index.baseStat}
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
