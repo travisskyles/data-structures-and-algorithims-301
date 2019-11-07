@@ -153,9 +153,8 @@ Write a function named evenOddNumericValues that, given an array as input, uses 
 For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
 ------------------------------------------------------------------------------------------------ */
 
-const evenOddNumericValues = (arr) => {
-  // Solution code here...
-};
+const evenOddNumericValues = (arr) => arr.filter(item => typeof(item) === 'number').map(num => num % 2 === 0 ? 'even' : 'odd');
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
