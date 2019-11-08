@@ -148,9 +148,7 @@ Write a function that, given an array of numbers as input, uses reduce to calcul
 Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
-const calculateAverage = (arr) => {
-  // Solution code here...
-};
+const calculateAverage = (arr) => arr.reduce((acc, curr) => acc + curr,0) / arr.length;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -170,7 +168,10 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, curr) => {
+    isPrime(curr)? acc++ : false;
+    return acc
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -212,9 +213,9 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const extractStat = (statName, arr) => {
-  // Solution code here...
-};
+const extractStat = (statName, arr) => arr.reduce((acc, curr) => {
+  return curr.stat.name === statName ? acc = curr : acc;
+}, null);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -226,11 +227,11 @@ Write a function named extractChildren that, given the array of characters from 
 2) Then, uses reduce to return an array of all the children's names in the filtered array
 ------------------------------------------------------------------------------------------------ */
 
-const extractChildren = (arr) => {
-  // Solution code here...
-};
+const extractChildren = (arr) => arr
+  .filter(char => /[a]/gi.test(char.name))
+  .reduce((acc, curr) => curr.children? acc.concat(curr.children): acc,[]);
 
-/* ------------------------------------------------------------------------------------------------
+/* -------------------------------  -----------------------------------------------------------------
 TESTS
 
 All the code below will verify that your functions are working to solve the challenges.
