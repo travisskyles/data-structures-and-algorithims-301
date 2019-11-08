@@ -79,6 +79,7 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => arr.filter(item => item.baseStat > minBaseStat);
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -87,9 +88,7 @@ Write a function named getStatName that is an extension of your getBaseStatGreat
 For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
 ------------------------------------------------------------------------------------------------ */
 
-const getStatName = (arr, minBaseStat) =>
-  arr.filter(item => item.baseStat > minBaseStat).map(name => name.stat.name);
-
+const getStatName = (arr, minBaseStat) => arr.filter(item => item.baseStat > minBaseStat).map(name => name.stat.name);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -141,6 +140,7 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => arr.filter(person => !person.children)
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
