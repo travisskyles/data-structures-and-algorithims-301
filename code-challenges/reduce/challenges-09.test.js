@@ -213,9 +213,9 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const extractStat = (statName, arr) => {
-
-};
+const extractStat = (statName, arr) => arr.reduce((acc, curr) => {
+  return curr.stat.name === statName ? acc = curr : acc;
+}, null);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
