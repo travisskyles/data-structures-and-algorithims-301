@@ -133,8 +133,11 @@ const characters = [
   },
 ];
 
-const countNumberOfChildren = (arr) => {
-  // Solution code here...
+const countNumberOfChildren = arr => {
+  return arr.reduce((acc,curr) => {
+    curr.children ? acc += curr.children.length : false;
+    return acc;
+  }, 0)
 };
 
 /* ------------------------------------------------------------------------------------------------
