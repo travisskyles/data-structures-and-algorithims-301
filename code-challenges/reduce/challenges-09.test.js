@@ -227,11 +227,11 @@ Write a function named extractChildren that, given the array of characters from 
 2) Then, uses reduce to return an array of all the children's names in the filtered array
 ------------------------------------------------------------------------------------------------ */
 
-const extractChildren = (arr) => {
-  // Solution code here...
-};
+const extractChildren = (arr) => arr
+  .filter(char => /[a]/gi.test(char.name))
+  .reduce((acc, curr) => curr.children? acc.concat(curr.children): acc,[]);
 
-/* ------------------------------------------------------------------------------------------------
+/* -------------------------------  -----------------------------------------------------------------
 TESTS
 
 All the code below will verify that your functions are working to solve the challenges.
