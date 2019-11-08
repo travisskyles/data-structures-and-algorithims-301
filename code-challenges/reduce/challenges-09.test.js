@@ -168,7 +168,10 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, curr) => {
+    isPrime(curr)? acc++ : false;
+    return acc
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -211,7 +214,7 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
