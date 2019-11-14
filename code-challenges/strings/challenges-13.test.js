@@ -75,7 +75,13 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  const targetArr = [];
+  arr.forEach(string => {
+    if(string.includes(target)){
+      targetArr.push(string);
+    }
+  });
+  return targetArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
