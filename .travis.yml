@@ -5,6 +5,7 @@ branches:
   only:
     - master
 script:
+  - cd 401
   - npm run lint
   - npm test
 
