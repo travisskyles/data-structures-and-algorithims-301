@@ -8,6 +8,7 @@ const insertShiftArray = require('../arrayShift');
 describe('Make sure that the insertArrayShift function works correctly', () => {
   it('returns an array with the new value in the middle with an even length initial array', () => {
     expect(insertShiftArray([1, 2, 3, 4], 5)).toStrictEqual([1, 2, 5, 3, 4]);
+    expect(insertShiftArray([1], 0)).toStrictEqual([1,0]);
   });
   it('returns an array with the new value in the middle with an odd length initial array', () => {
     expect(insertShiftArray([1, 2, 3, 4, 5], 0)).toStrictEqual([1,2,3,0,4,5]);
