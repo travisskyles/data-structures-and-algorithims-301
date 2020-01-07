@@ -8,6 +8,8 @@ Write a function called insertShiftArray which takes in an array and the value t
 
 ## Approach & Efficiency
 
+For this challenge I decided to work the problem in two parts. Initially I created a new empty array and then used a while loop and an iterator to set the new array values equal to the input array until reaching the middle index. Then the new value is inserted and another while loop is used to finish inserting the remaining values.
+
 ## Solution
 
-![](../../assets/)
+![](../../assets/02-arrayShift.jpg)
